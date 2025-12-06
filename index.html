@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legacy Line Charts - East Grand Forks Green Wave</title>
+    <title>Legacy Line Charts v1.3 - EGF Green Wave</title>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -108,57 +108,47 @@
         );
 
         // ============================================================
-        // SUBSCRIBER SITE: East Grand Forks Green Wave
-        // Version: 1.1 | Built: 2025-12-06
+        // SUBSCRIBER CONFIGURATION
+        // Set SUBSCRIBER_MODE = true when building subscriber sites
+        // Then populate EMBEDDED_CONFIG with their exported data
         // ============================================================
-        const SUBSCRIBER_MODE = true;
+        const SUBSCRIBER_MODE = false;  // Master site = false, Subscriber sites = true
         
+        const EMBEDDED_CONFIG = null;   // null for master site, or paste exported config for subscribers
+        /* Example for subscriber site:
         const EMBEDDED_CONFIG = {
           siteId: 'east-grand-forks',
-          teamSetup: {
-            teamName: 'East Grand Forks Green Wave',
-            logo: 'data:image/webp;base64,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',
-            colors: { primary: '#027308', secondary: '#cc1d02' },
-            arena: 'Ralph Engelstad Arena Ice, East Grand Forks',
-            pronunciations: {},
-            careerSeasonData: { season1: '', season2: '', season3: '' }
-          },
-          careerStats: {"VARNSON_HUN":{"type":"skater","data":{"gp":87,"g":24,"a":50,"pts":74,"pim":72,"plusMinus":0,"fow":0,"fol":0}},"LOVEJOY_TUC":{"type":"skater","data":{"gp":55,"g":30,"a":23,"pts":53,"pim":22,"plusMinus":0,"fow":0,"fol":0}},"EPS_JAC":{"type":"skater","data":{"gp":87,"g":39,"a":36,"pts":75,"pim":35,"plusMinus":0,"fow":0,"fol":0}},"HILLS_COO":{"type":"skater","data":{"gp":87,"g":17,"a":51,"pts":68,"pim":33,"plusMinus":0,"fow":0,"fol":0}},"PANZER_JAC":{"type":"skater","data":{"gp":55,"g":14,"a":31,"pts":45,"pim":8,"plusMinus":2,"fow":0,"fol":0}},"BIES_COL":{"type":"skater","data":{"gp":84,"g":18,"a":33,"pts":51,"pim":108,"plusMinus":2,"fow":0,"fol":0}},"MEULEBROECK_NOL":{"type":"skater","data":{"gp":56,"g":9,"a":24,"pts":33,"pim":20,"plusMinus":0,"fow":0,"fol":0}},"PESCH_JUD":{"type":"skater","data":{"gp":87,"g":6,"a":28,"pts":34,"pim":90,"plusMinus":0,"fow":0,"fol":0}},"CORBETT_NIC":{"type":"skater","data":{"gp":83,"g":8,"a":23,"pts":31,"pim":52,"plusMinus":0,"fow":0,"fol":0}},"SCHMIEDEBERG_COL":{"type":"skater","data":{"gp":49,"g":7,"a":7,"pts":14,"pim":6,"plusMinus":0,"fow":0,"fol":0}},"BIES_MAX":{"type":"skater","data":{"gp":19,"g":3,"a":5,"pts":8,"pim":12,"plusMinus":0,"fow":0,"fol":0}},"CHUPKA_JAK":{"type":"skater","data":{"gp":32,"g":3,"a":3,"pts":6,"pim":12,"plusMinus":0,"fow":0,"fol":0}},"CLAUSON_RYA":{"type":"skater","data":{"gp":29,"g":1,"a":3,"pts":4,"pim":4,"plusMinus":0,"fow":0,"fol":0}},"OVERGAARD_BRA":{"type":"skater","data":{"gp":58,"g":3,"a":6,"pts":9,"pim":23,"plusMinus":0,"fow":0,"fol":0}},"CORDTS_WYA":{"type":"skater","data":{"gp":27,"g":0,"a":3,"pts":3,"pim":10,"plusMinus":0,"fow":0,"fol":0}},"NOWACKI_JOR":{"type":"skater","data":{"gp":38,"g":1,"a":2,"pts":3,"pim":15,"plusMinus":0,"fow":0,"fol":0}},"FRIZE_NOA":{"type":"skater","data":{"gp":41,"g":0,"a":2,"pts":2,"pim":2,"plusMinus":0,"fow":0,"fol":0}},"SCHMALTZ_BOD":{"type":"skater","data":{"gp":25,"g":1,"a":0,"pts":1,"pim":2,"plusMinus":0,"fow":0,"fol":0}},"BRATRUD_WES":{"type":"skater","data":{"gp":18,"g":0,"a":0,"pts":0,"pim":0,"plusMinus":0,"fow":0,"fol":0}},"LIND_SHA":{"type":"skater","data":{"gp":9,"g":0,"a":0,"pts":0,"pim":0,"plusMinus":0,"fow":0,"fol":0}},"JOHNSON_BRO":{"type":"skater","data":{"gp":1,"g":0,"a":0,"pts":0,"pim":0,"plusMinus":0,"fow":0,"fol":0}},"BOESPFLUG_CHA":{"type":"goalie","data":{"gp":4,"min":"0:00","w":0,"l":0,"t":0,"so":0,"ga":0,"sv":0}},"ROGNERUD_CAM":{"type":"goalie","data":{"gp":1,"min":"22:58","w":0,"l":0,"t":0,"so":0,"ga":4,"sv":4}},"ROCKSTAD_RYA":{"type":"goalie","data":{"gp":26,"min":"1224:05","w":13,"l":10,"t":1,"so":3,"ga":68,"sv":427}},"SCHINDELE_NOA":{"type":"goalie","data":{"gp":28,"min":"1426:10","w":15,"l":10,"t":2,"so":4,"ga":73,"sv":591}},"SCHULTZ_BRO":{"type":"skater","data":{"gp":55,"g":44,"a":52,"pts":96,"pim":59,"plusMinus":2,"fow":0,"fol":0}},"JAMIESON_LAN":{"type":"skater","data":{"gp":56,"g":31,"a":52,"pts":83,"pim":14,"plusMinus":2,"fow":0,"fol":0}},"MAGNER_GRA":{"type":"skater","data":{"gp":56,"g":28,"a":29,"pts":57,"pim":32,"plusMinus":2,"fow":0,"fol":0}},"FORE_JAC":{"type":"skater","data":{"gp":54,"g":14,"a":21,"pts":35,"pim":4,"plusMinus":0,"fow":0,"fol":0}},"SCHMALTZ_CUL":{"type":"skater","data":{"gp":56,"g":4,"a":11,"pts":15,"pim":20,"plusMinus":0,"fow":0,"fol":0}},"BURGER_GRA":{"type":"skater","data":{"gp":20,"g":2,"a":2,"pts":4,"pim":8,"plusMinus":0,"fow":0,"fol":0}},"MOE_CHA":{"type":"skater","data":{"gp":92,"g":15,"a":7,"pts":22,"pim":25,"plusMinus":0,"fow":0,"fol":0}},"BOESPFLUG_KAD":{"type":"skater","data":{"gp":8,"g":0,"a":0,"pts":0,"pim":0,"plusMinus":0,"fow":0,"fol":0}},"NOLTE_PAR":{"type":"skater","data":{"gp":2,"g":0,"a":0,"pts":0,"pim":0,"plusMinus":0,"fow":0,"fol":0}},"MCMAHON_THO":{"type":"goalie","data":{"gp":12,"min":"214:10","w":3,"l":1,"t":0,"so":2,"ga":7,"sv":41}},"WAVRA_LUC":{"type":"goalie","data":{"gp":20,"min":"395:30","w":4,"l":3,"t":0,"so":0,"ga":21,"sv":122}},"SCHMIEDEBERG_CAL":{"type":"skater","data":{"gp":26,"g":8,"a":9,"pts":17,"pim":14,"plusMinus":0,"fow":0,"fol":0}},"FROST_SAM":{"type":"skater","data":{"gp":27,"g":2,"a":9,"pts":11,"pim":16,"plusMinus":0,"fow":0,"fol":0}},"SEYDEL_GAG":{"type":"skater","data":{"gp":26,"g":4,"a":2,"pts":6,"pim":4,"plusMinus":0,"fow":0,"fol":0}},"SCHUMACHER_SAM":{"type":"skater","data":{"gp":25,"g":1,"a":4,"pts":5,"pim":2,"plusMinus":0,"fow":0,"fol":0}},"KOFSTAD_CAM":{"type":"skater","data":{"gp":24,"g":1,"a":1,"pts":2,"pim":6,"plusMinus":0,"fow":0,"fol":0}},"WOIDTKE_LAN":{"type":"skater","data":{"gp":3,"g":0,"a":0,"pts":0,"pim":0,"plusMinus":0,"fow":0,"fol":0}},"PAVLISH_BRA":{"type":"skater","data":{"gp":7,"g":0,"a":0,"pts":0,"pim":0,"plusMinus":0,"fow":0,"fol":0}},"HOLM_CHR":{"type":"skater","data":{"gp":3,"g":0,"a":0,"pts":0,"pim":0,"plusMinus":0,"fow":0,"fol":0}},"MERO_CHA":{"type":"goalie","data":{"gp":25,"min":"1242:38","w":15,"l":10,"t":0,"so":4,"ga":59,"sv":483}}},
-          careerSeasonData: { season1: '', season2: '', season3: '' }
+          teamSetup: { teamName: '...', logo: '...', colors: {...}, arena: '...', pronunciations: {...} },
+          careerStats: { LASTNAME_FIR: { type: 'skater', data: {...} }, ... },
+          careerSeasonData: { season1: '...', season2: '...', season3: '...' }
         };
+        */
         // ============================================================
 
         const HockeyLinesChart = () => {
-          // In subscriber mode, use embedded config; otherwise use defaults
+          // Initialize myTeamSetup from EMBEDDED_CONFIG if in subscriber mode
           const getInitialTeamSetup = () => {
-            if (SUBSCRIBER_MODE && EMBEDDED_CONFIG && EMBEDDED_CONFIG.teamSetup) {
-              return {
-                teamName: EMBEDDED_CONFIG.teamSetup.teamName || 'My Team',
-                logo: EMBEDDED_CONFIG.teamSetup.logo || null,
-                colors: EMBEDDED_CONFIG.teamSetup.colors || { primary: '#fb923c', secondary: '#1f2937' },
-                arena: EMBEDDED_CONFIG.teamSetup.arena || '',
-                pronunciations: EMBEDDED_CONFIG.teamSetup.pronunciations || {}
-              };
+            if (SUBSCRIBER_MODE && EMBEDDED_CONFIG?.teamSetup) {
+              console.log('🏒 SUBSCRIBER MODE: Loading embedded team config');
+              return EMBEDDED_CONFIG.teamSetup;
             }
+            // Default for master site (Delano)
             return {
               teamName: 'Delano Tigers',
               logo: null,
               colors: { primary: '#fb923c', secondary: '#1f2937' },
               arena: 'Delano Area Sports Arena, Delano',
-              pronunciations: {}
+              careerStats: {},
+              pronunciations: {},
+              careerSeasonData: {
+                season1: '',
+                season2: '',
+                season3: ''
+              }
             };
           };
           
-          const [myTeamSetup, setMyTeamSetup] = useState(getInitialTeamSetup());
-
-          // Career stats import state - in subscriber mode, get from embedded config
-          const getInitialCareerImport = () => {
-            if (SUBSCRIBER_MODE && EMBEDDED_CONFIG && EMBEDDED_CONFIG.careerSeasonData) {
-              return EMBEDDED_CONFIG.careerSeasonData;
-            }
-            return { season1: '', season2: '', season3: '' };
-          };
-          const [careerStatsImport, setCareerStatsImport] = useState(getInitialCareerImport());
+          const [myTeamSetup, setMyTeamSetup] = useState(getInitialTeamSetup);
 
           const [myTeamData, setMyTeamData] = useState({
             teamName: '',
@@ -228,6 +218,20 @@
           const [selectedPlayer, setSelectedPlayer] = useState(null);
           const [opponentLogo, setOpponentLogo] = useState(null);
           const [opponentColors, setOpponentColors] = useState({ primary: '#dc2626', secondary: '#991b1b' });
+          const [careerStatsImport, setCareerStatsImport] = useState(() => {
+            if (SUBSCRIBER_MODE && EMBEDDED_CONFIG?.careerSeasonData) {
+              return {
+                lastSeason: EMBEDDED_CONFIG.careerSeasonData.season1 || '',
+                twoSeasonsAgo: EMBEDDED_CONFIG.careerSeasonData.season2 || '',
+                threeSeasonsAgo: EMBEDDED_CONFIG.careerSeasonData.season3 || ''
+              };
+            }
+            return {
+              lastSeason: '',
+              twoSeasonsAgo: '',
+              threeSeasonsAgo: ''
+            };
+          });
 
           const colorOptions = ['GREEN', 'RED', 'BLUE', 'YELLOW', 'WHITE', 'BLACK', 'DARK GRAY', 'LIGHT GRAY'];
           const colorClasses = {
@@ -321,39 +325,39 @@
             }
           };
 
-          // Load saved setup on mount - skip in subscriber mode since we use embedded config
+          // Load saved setup on mount
           useEffect(() => {
-            // In subscriber mode, load career stats from embedded config into localStorage
-            if (SUBSCRIBER_MODE && EMBEDDED_CONFIG && EMBEDDED_CONFIG.careerStats) {
-              try {
+            // In subscriber mode, initialize from embedded config
+            if (SUBSCRIBER_MODE && EMBEDDED_CONFIG) {
+              console.log('🏒 SUBSCRIBER MODE: Initializing from embedded config');
+              
+              // Initialize career stats in localStorage from embedded config
+              if (EMBEDDED_CONFIG.careerStats && Object.keys(EMBEDDED_CONFIG.careerStats).length > 0) {
                 localStorage.setItem('hockey-scout-career-stats', JSON.stringify(EMBEDDED_CONFIG.careerStats));
-                console.log('Loaded embedded career stats into localStorage');
-              } catch (error) {
-                console.error('Error loading embedded career stats:', error);
+                console.log('📦 Loaded', Object.keys(EMBEDDED_CONFIG.careerStats).length, 'embedded career stat records');
               }
+              
+              // Don't override myTeamSetup from localStorage in subscriber mode
+              return;
             }
             
-            // In non-subscriber mode, load setup from localStorage
-            if (!SUBSCRIBER_MODE) {
-              try {
-                const saved = localStorage.getItem('myTeamSetup');
-                if (saved) {
-                  setMyTeamSetup(JSON.parse(saved));
-                }
-              } catch (error) {
-                console.error('Error loading saved setup:', error);
+            // Master site: load from localStorage
+            try {
+              const saved = localStorage.getItem('myTeamSetup');
+              if (saved) {
+                setMyTeamSetup(JSON.parse(saved));
               }
+            } catch (error) {
+              console.error('Error loading saved setup:', error);
             }
           }, []);
 
-          // Save setup to localStorage whenever it changes (only in non-subscriber mode)
+          // Save setup to localStorage whenever it changes
           useEffect(() => {
-            if (!SUBSCRIBER_MODE) {
-              try {
-                localStorage.setItem('myTeamSetup', JSON.stringify(myTeamSetup));
-              } catch (error) {
-                console.error('Error saving setup:', error);
-              }
+            try {
+              localStorage.setItem('myTeamSetup', JSON.stringify(myTeamSetup));
+            } catch (error) {
+              console.error('Error saving setup:', error);
             }
           }, [myTeamSetup]);
 
@@ -388,13 +392,36 @@
 
           // Export Team Configuration for subscriber builds
           const handleExportConfig = () => {
+            // Get career stats from localStorage
+            let storedCareerStats = {};
+            try {
+              const stored = localStorage.getItem('hockey-scout-career-stats');
+              if (stored) {
+                storedCareerStats = JSON.parse(stored);
+                console.log('📦 Export: Including', Object.keys(storedCareerStats).length, 'career stat records');
+              }
+            } catch (e) {
+              console.error('Error reading career stats:', e);
+            }
+            
             const exportObj = {
               _exportInfo: {
                 exportDate: new Date().toISOString(),
                 version: '10.5',
-                teamName: myTeamSetup.teamName
+                teamName: myTeamSetup.teamName,
+                description: 'Full team configuration for subscriber site build'
               },
-              myTeamSetup: myTeamSetup
+              myTeamSetup: {
+                ...myTeamSetup,
+                // Include career stats from localStorage
+                careerStats: storedCareerStats
+              },
+              // Include raw career season paste data
+              careerSeasonData: {
+                season1: careerStatsImport.lastSeason || '',
+                season2: careerStatsImport.twoSeasonsAgo || '',
+                season3: careerStatsImport.threeSeasonsAgo || ''
+              }
             };
             
             const jsonString = JSON.stringify(exportObj, null, 2);
@@ -626,6 +653,14 @@
               if (nicknameIdx >= 0) {
                 nickname = lines[nicknameIdx].split(':')[1]?.trim() || '';
                 console.log('✅ Found nickname:', nickname);
+              }
+              
+              // Find Home Arena (for My Team Setup)
+              let homeArena = '';
+              const homeArenaIdx = lines.findIndex(l => l.startsWith('Home Arena:'));
+              if (homeArenaIdx >= 0) {
+                homeArena = lines[homeArenaIdx].split('Home Arena:')[1]?.trim() || '';
+                console.log('✅ Found Home Arena:', homeArena);
               }
               
               // Find team record
@@ -983,14 +1018,6 @@
                 }
               }
               
-              // Parse Home Arena
-              let homeArena = '';
-              const arenaIdx = lines.findIndex(l => l.startsWith('Home Arena:'));
-              if (arenaIdx >= 0) {
-                homeArena = lines[arenaIdx].split('Home Arena:')[1]?.trim() || '';
-                console.log('✅ Found home arena:', homeArena);
-              }
-              
               console.log('📋 ========== PARSE COMPLETE ==========');
               
               return { teamName, nickname, record, section, conference, headCoach, assistantCoaches, studentManager, stats, lastGame, nextGame, currentGame, homeArena };
@@ -1035,6 +1062,29 @@
                     
                     let handed = '';
                     let shoots = '';
+                    let height = '';
+                    let weight = '';
+                    
+                    // Extract height (format like 6' 3" or 5' 10")
+                    for (let j = 4; j < fields.length; j++) {
+                      const field = fields[j];
+                      const heightMatch = field.match(/^(\d)'[\s]*(\d{1,2})"?$/);
+                      if (heightMatch) {
+                        height = `${heightMatch[1]}' ${heightMatch[2]}"`;
+                        console.log(`  → Found height: ${height} for ${name}`);
+                        break;
+                      }
+                    }
+                    
+                    // Extract weight (3-digit number typically between 100-250)
+                    for (let j = 4; j < fields.length; j++) {
+                      const field = fields[j];
+                      if (/^\d{2,3}$/.test(field) && parseInt(field) >= 100 && parseInt(field) <= 300) {
+                        weight = field;
+                        console.log(`  → Found weight: ${weight} for ${name}`);
+                        break;
+                      }
+                    }
                     
                     // FIX 2: Extract shoots/handed from correct column
                     for (let j = 5; j < fields.length; j++) {
@@ -1083,6 +1133,8 @@
                       lastName: lastName,
                       position: position,
                       grade: grade,
+                      height: height,
+                      weight: weight,
                       dobYear: dobYear,
                       handed: handed,
                       shoots: shoots,
@@ -1109,6 +1161,20 @@
                     
                     // Extract the part AFTER grade number
                     const afterGrade = line.substring(line.indexOf(grade) + grade.length);
+                    
+                    // Extract height (format like 6' 3" or 5' 10")
+                    let height = '';
+                    const heightMatch = afterGrade.match(/(\d)'[\s]*(\d{1,2})"/);
+                    if (heightMatch) {
+                      height = `${heightMatch[1]}' ${heightMatch[2]}"`;
+                    }
+                    
+                    // Extract weight (3-digit number)
+                    let weight = '';
+                    const weightMatch = afterGrade.match(/(\d{3})(?=\D|$)/);
+                    if (weightMatch && parseInt(weightMatch[1]) >= 100 && parseInt(weightMatch[1]) <= 300) {
+                      weight = weightMatch[1];
+                    }
                     
                     // Extract shoots/handed from the position AFTER weight (3 digits)
                     // Pattern: HEIGHT(like 6' 3") + WEIGHT(like 190) + SHOOTS(LC/RC/Left/Right)
@@ -1144,7 +1210,7 @@
                       dobYear = yearMatch[0];
                     }
                     
-                    console.log('✓ Found player (concatenated):', { number, name, position, grade, shoots, dobYear });
+                    console.log('✓ Found player (concatenated):', { number, name, position, grade, height, weight, shoots, dobYear });
                     
                     // Strip (Capt.) or (Capt) or * from names
                     const cleanName = name.replace(/\s*\(Capt\.?\)/i, '').replace(/\*/g, '').trim();
@@ -1166,6 +1232,8 @@
                       lastName: lastName,
                       position: position,
                       grade: grade,
+                      height: height,
+                      weight: weight,
                       dobYear: dobYear,
                       handed: handed,
                       shoots: shoots,
@@ -1242,7 +1310,7 @@
                     
                     player.stats = currentStats;
                     
-                    const baseCareer = player.baseCareerStats || { gp: 0, g: 0, a: 0, pts: 0, plusMinus: 0, fow: 0, fol: 0 };
+                    const baseCareer = player.baseCareerStats || { gp: 0, g: 0, a: 0, pts: 0, pim: 0, plusMinus: 0, fow: 0, fol: 0 };
                     const totalFOW = (baseCareer.fow || 0) + currentStats.fow;
                     const totalFOL = (baseCareer.fol || 0) + currentStats.fol;
                     const careerFaceoffPct = (totalFOW + totalFOL > 0) ? ((totalFOW / (totalFOW + totalFOL)) * 100).toFixed(1) : '0.0';
@@ -1252,6 +1320,7 @@
                       g: baseCareer.g + currentStats.g,
                       a: baseCareer.a + currentStats.a,
                       pts: baseCareer.pts + currentStats.pts,
+                      pim: (baseCareer.pim || 0) + currentStats.pim,
                       plusMinus: baseCareer.plusMinus + currentStats.plusMinus,
                       faceoffPct: careerFaceoffPct,
                       fow: totalFOW,
@@ -1601,8 +1670,8 @@
               if (importStep === 'myTeamHome') {
                 const parsed = parseHomePage(text);
                 setMyTeamData(prev => ({ ...prev, ...parsed }));
-                // Also update arena in myTeamSetup if found
-                if (parsed.homeArena) {
+                // If homeArena was found and myTeamSetup.arena is empty, update it
+                if (parsed.homeArena && !myTeamSetup.arena) {
                   setMyTeamSetup(prev => ({ ...prev, arena: parsed.homeArena }));
                 }
               } else if (importStep === 'myTeamRoster') {
@@ -1658,10 +1727,6 @@
                 if (importStep === 'myTeamHome') {
                   const parsed = parseHomePage(importText);
                   setMyTeamData(prev => ({ ...prev, ...parsed }));
-                  // Also update arena in myTeamSetup if found
-                  if (parsed.homeArena) {
-                    setMyTeamSetup(prev => ({ ...prev, arena: parsed.homeArena }));
-                  }
                 } else if (importStep === 'myTeamRoster') {
                   let roster = parseRoster(importText, myTeamData.roster);
                   roster = loadCareerStatsFromStorage(roster);
@@ -1719,10 +1784,6 @@
                 if (importStep === 'myTeamHome') {
                   const parsed = parseHomePage(importText);
                   setMyTeamData(prev => ({ ...prev, ...parsed }));
-                  // Also update arena in myTeamSetup if found
-                  if (parsed.homeArena) {
-                    setMyTeamSetup(prev => ({ ...prev, arena: parsed.homeArena }));
-                  }
                 } else if (importStep === 'myTeamRoster') {
                   let roster = parseRoster(importText, myTeamData.roster);
                   roster = loadCareerStatsFromStorage(roster);
@@ -1991,7 +2052,7 @@
             const statFontSize = `${8 * fontScale}pt`;
             const nameFontSize = `${22 * fontScale}pt`;
             const infoFontSize = statFontSize;
-            const pronunciationFontSize = `${10 * fontScale}pt`;
+            const pronunciationFontSize = `${12.5 * fontScale}pt`;
             
             React.useEffect(() => {
               const resizeText = (element, maxSize, minSize = 8) => {
@@ -2022,8 +2083,8 @@
               }
               
               if (pronunciationRef.current && pronunciation) {
-                const maxPronunciationSize = isPreview ? 10 * 0.3125 : 10;
-                const minPronunciationSize = isPreview ? 2 : 6;
+                const maxPronunciationSize = isPreview ? 12.5 * 0.3125 : 12.5;
+                const minPronunciationSize = isPreview ? 2.5 : 7.5;
                 resizeText(pronunciationRef.current, maxPronunciationSize, minPronunciationSize);
               }
             }, [player.number, player.name, pronunciation, isGoalie, isPreview]);
@@ -2061,7 +2122,7 @@
                       textAlign: 'center',
                       width: '100%',
                       overflow: 'hidden',
-                      marginBottom: '4px'
+                      marginBottom: '2px'
                     }}
                   >
                     {player.number}
@@ -2073,9 +2134,10 @@
                       style={{ 
                         fontSize: pronunciationFontSize,
                         fontStyle: 'italic',
+                        fontWeight: 'normal',
                         lineHeight: '1',
                         textAlign: 'center',
-                        marginTop: '1px',
+                        marginTop: '0px',
                         whiteSpace: 'nowrap',
                         overflow: 'hidden',
                         width: '100%'
@@ -2116,88 +2178,129 @@
                     lineHeight: '1.0',
                     marginBottom: '1px'
                   }}>
-                    <div style={{ textAlign: 'left' }}>{positionText}</div>
-                    <div style={{ textAlign: 'right' }}>{gradeDisplay}</div>
+                    {/* Build info parts array, only include non-empty values */}
+                    {(() => {
+                      const parts = [];
+                      if (positionText) parts.push(positionText);
+                      if (player.height) parts.push(player.height);
+                      if (player.weight) parts.push(`${player.weight} lbs`);
+                      if (gradeDisplay) parts.push(gradeDisplay);
+                      return parts.map((part, i) => (
+                        <span key={i} style={{ whiteSpace: 'nowrap' }}>{part}</span>
+                      ));
+                    })()}
                   </div>
                   
                   {!isGoalie ? (
                     <>
                       <div style={{ 
+                        display: 'flex',
+                        justifyContent: 'space-between',
                         fontSize: statFontSize,
                         fontWeight: 'bold',
                         lineHeight: '1.0',
                         whiteSpace: 'nowrap',
                         overflow: 'hidden'
                       }}>
-                        25-26: GP:{stats.gp}  {stats.g}-{stats.a}--{stats.pts}
+                        <span>25-26: GP {stats.gp}</span>
+                        <span>Pts. {stats.g}-{stats.a}--{stats.pts}</span>
                       </div>
                       
                       <div style={{ 
+                        display: 'flex',
+                        justifyContent: 'space-between',
                         fontSize: statFontSize,
                         fontWeight: 'bold',
                         lineHeight: '1.0',
                         whiteSpace: 'nowrap',
                         overflow: 'hidden'
                       }}>
-                        PIM: {stats.pim} +/- {formatPlusMinus(stats.plusMinus)} Faceoff {faceoffPct}%
+                        <span>PIM {stats.pim}</span>
+                        <span>+/- {formatPlusMinus(stats.plusMinus)}</span>
+                        <span>Faceoff {faceoffPct}%</span>
                       </div>
                       
                       <div style={{ 
+                        display: 'flex',
+                        justifyContent: 'space-between',
                         fontSize: statFontSize,
+                        fontWeight: 'normal',
                         lineHeight: '1.0',
                         whiteSpace: 'nowrap',
                         overflow: 'hidden'
                       }}>
-                        Career GP:{careerStats.gp}  {careerStats.g}-{careerStats.a}--{careerStats.pts}
+                        <span>Career: GP {careerStats.gp}</span>
+                        <span>Pts. {careerStats.g}-{careerStats.a}--{careerStats.pts}</span>
                       </div>
                       
                       <div style={{ 
+                        display: 'flex',
+                        justifyContent: 'space-between',
                         fontSize: statFontSize,
+                        fontWeight: 'normal',
                         lineHeight: '1.0',
                         whiteSpace: 'nowrap',
                         overflow: 'hidden'
                       }}>
-                        PIM: {careerStats.pim || 0} +/- {formatPlusMinus(careerStats.plusMinus)} Faceoff {careerStats.faceoffPct}%
+                        <span>PIM {careerStats.pim || 0}</span>
+                        <span>+/- {formatPlusMinus(careerStats.plusMinus)}</span>
+                        <span>Faceoff {careerStats.faceoffPct}%</span>
                       </div>
                     </>
                   ) : (
                     <>
                       <div style={{ 
+                        display: 'flex',
+                        justifyContent: 'space-between',
                         fontSize: statFontSize,
                         fontWeight: 'bold',
                         lineHeight: '1.0',
                         whiteSpace: 'nowrap',
                         overflow: 'hidden'
                       }}>
-                        25-26: MIN {goalieStats.min} GAA: {goalieStats.gaa.toFixed(2)}
+                        <span>25-26: MIN {goalieStats.min}</span>
+                        <span>GAA {goalieStats.gaa.toFixed(2)}</span>
                       </div>
                       
                       <div style={{ 
+                        display: 'flex',
+                        justifyContent: 'space-between',
                         fontSize: statFontSize,
                         fontWeight: 'bold',
                         lineHeight: '1.0',
                         whiteSpace: 'nowrap',
                         overflow: 'hidden'
                       }}>
-                        PIM: {goalieStats.pim || 0} {goalieStats.w}-{goalieStats.l}-{goalieStats.t} ({goalieStats.so}) S% {goalieStats.svp}
+                        <span>PIM {goalieStats.pim || 0}</span>
+                        <span>Rec. {goalieStats.w}-{goalieStats.l}-{goalieStats.t} ({goalieStats.so})</span>
+                        <span>S% {goalieStats.svp}</span>
                       </div>
                       
                       <div style={{ 
+                        display: 'flex',
+                        justifyContent: 'space-between',
                         fontSize: statFontSize,
+                        fontWeight: 'normal',
                         lineHeight: '1.0',
                         whiteSpace: 'nowrap',
                         overflow: 'hidden'
                       }}>
-                        Career: MIN {careerGoalieStats.min} GAA: {careerGoalieStats.gaa.toFixed(2)}
+                        <span>Career: MIN {careerGoalieStats.min}</span>
+                        <span>GAA {careerGoalieStats.gaa.toFixed(2)}</span>
                       </div>
                       
                       <div style={{ 
+                        display: 'flex',
+                        justifyContent: 'space-between',
                         fontSize: statFontSize,
+                        fontWeight: 'normal',
                         lineHeight: '1.0',
                         whiteSpace: 'nowrap',
                         overflow: 'hidden'
                       }}>
-                        PIM: {careerGoalieStats.pim || 0} {careerGoalieStats.w}-{careerGoalieStats.l}-{careerGoalieStats.t} ({careerGoalieStats.so}) S% {careerGoalieStats.svp}
+                        <span>PIM {careerGoalieStats.pim || 0}</span>
+                        <span>Rec. {careerGoalieStats.w}-{careerGoalieStats.l}-{careerGoalieStats.t} ({careerGoalieStats.so})</span>
+                        <span>S% {careerGoalieStats.svp}</span>
                       </div>
                     </>
                   )}
@@ -2511,13 +2614,15 @@
                     
                     <div className="p-6">
                       <div className="bg-purple-50 p-4 rounded mb-4">
-                        <h3 className="font-bold mb-2">Subscriber Build Export</h3>
+                        <h3 className="font-bold mb-2">📦 Subscriber Build Export v10.5</h3>
                         <p className="text-sm text-gray-600 mb-2">
                           Copy this JSON configuration and send it to Claude to build a customized subscriber version. 
-                          This includes all your team setup data (team name, colors, logo, career stats, pronunciations).
+                        </p>
+                        <p className="text-sm text-gray-600 mb-2">
+                          <strong>🔒 Baked into subscriber site (buttons hidden):</strong> Team name, logo, colors, arena, career stats from all 3 seasons.
                         </p>
                         <p className="text-sm text-gray-600">
-                          <strong>What's included:</strong> Team name, mascot, arena, logo, colors, career stats, pronunciations, and season data.
+                          <strong>✏️ Editable by subscriber coach:</strong> Pronunciations (saved to their local storage).
                         </p>
                       </div>
                       
@@ -3092,17 +3197,17 @@
                       <div className="border-2 rounded flex flex-col" style={{ 
                         borderColor: myTeamSetup.colors.primary, 
                         background: `${myTeamSetup.colors.primary}10`,
-                        padding: '3px'
+                        padding: '2px'
                       }}>
-                        <div style={{ fontSize: '9px' }} className="font-bold text-center mb-0">{myTeamData.nickname} Penalty Kill</div>
-                        <div className="flex-1 flex flex-col justify-around" style={{ fontSize: '9px', lineHeight: '1.1' }}>
+                        <div style={{ fontSize: '8px' }} className="font-bold text-center mb-0">{myTeamData.nickname} Penalty Kill</div>
+                        <div className="flex-1 flex flex-col justify-around" style={{ fontSize: '11px', lineHeight: '1.0' }}>
                           {[0,1,2,3,4].map(i => (
                             <input 
                               key={i}
                               type="text" 
                               placeholder="" 
-                              className="w-full border-0 bg-transparent"
-                              style={{ fontSize: '9px', padding: '1px', outline: 'none' }}
+                              className="w-full border-0 bg-transparent text-center font-bold"
+                              style={{ fontSize: '11px', padding: '0px', outline: 'none' }}
                               value={coachNotes.pk?.split('\n')[i] || ''}
                               onChange={(e) => {
                                 const lines = coachNotes.pk?.split('\n') || ['','','','',''];
@@ -3117,17 +3222,17 @@
                       <div className="border-2 rounded flex flex-col" style={{ 
                         borderColor: myTeamSetup.colors.primary, 
                         background: `${myTeamSetup.colors.primary}10`,
-                        padding: '3px'
+                        padding: '2px'
                       }}>
-                        <div style={{ fontSize: '9px' }} className="font-bold text-center mb-0">{myTeamData.nickname} Power Play</div>
-                        <div className="flex-1 flex flex-col justify-around" style={{ fontSize: '9px', lineHeight: '1.1' }}>
+                        <div style={{ fontSize: '8px' }} className="font-bold text-center mb-0">{myTeamData.nickname} Power Play</div>
+                        <div className="flex-1 flex flex-col justify-around" style={{ fontSize: '11px', lineHeight: '1.0' }}>
                           {[0,1,2,3,4].map(i => (
                             <input 
                               key={i}
                               type="text" 
                               placeholder="" 
-                              className="w-full border-0 bg-transparent"
-                              style={{ fontSize: '9px', padding: '1px', outline: 'none' }}
+                              className="w-full border-0 bg-transparent text-center font-bold"
+                              style={{ fontSize: '11px', padding: '0px', outline: 'none' }}
                               value={coachNotes.pp?.split('\n')[i] || ''}
                               onChange={(e) => {
                                 const lines = coachNotes.pp?.split('\n') || ['','','','',''];
