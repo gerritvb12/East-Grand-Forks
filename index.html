@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legacy Line Charts v10.5</title>
+    <title>Legacy Line Charts - East Grand Forks Green Wave</title>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -108,47 +108,57 @@
         );
 
         // ============================================================
-        // SUBSCRIBER CONFIGURATION
-        // Set SUBSCRIBER_MODE = true when building subscriber sites
-        // Then populate EMBEDDED_CONFIG with their exported data
+        // SUBSCRIBER SITE: East Grand Forks Green Wave
+        // Version: 1.1 | Built: 2025-12-06
         // ============================================================
-        const SUBSCRIBER_MODE = false;  // Master site = false, Subscriber sites = true
+        const SUBSCRIBER_MODE = true;
         
-        const EMBEDDED_CONFIG = null;   // null for master site, or paste exported config for subscribers
-        /* Example for subscriber site:
         const EMBEDDED_CONFIG = {
           siteId: 'east-grand-forks',
-          teamSetup: { teamName: '...', logo: '...', colors: {...}, arena: '...', pronunciations: {...} },
-          careerStats: { LASTNAME_FIR: { type: 'skater', data: {...} }, ... },
-          careerSeasonData: { season1: '...', season2: '...', season3: '...' }
+          teamSetup: {
+            teamName: 'East Grand Forks Green Wave',
+            logo: 'data:image/png;base64,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',
+            colors: { primary: '#027308', secondary: '#cc1d02' },
+            arena: 'Ralph Engelstad Arena Ice, East Grand Forks',
+            pronunciations: {},
+            careerSeasonData: { season1: '', season2: '', season3: '' }
+          },
+          careerStats: {"VARNSON_HUN":{"type":"skater","data":{"gp":87,"g":24,"a":50,"pts":74,"pim":72,"plusMinus":0,"fow":0,"fol":0}},"LOVEJOY_TUC":{"type":"skater","data":{"gp":55,"g":30,"a":23,"pts":53,"pim":22,"plusMinus":0,"fow":0,"fol":0}},"EPS_JAC":{"type":"skater","data":{"gp":87,"g":39,"a":36,"pts":75,"pim":35,"plusMinus":0,"fow":0,"fol":0}},"HILLS_COO":{"type":"skater","data":{"gp":87,"g":17,"a":51,"pts":68,"pim":33,"plusMinus":0,"fow":0,"fol":0}},"PANZER_JAC":{"type":"skater","data":{"gp":55,"g":14,"a":31,"pts":45,"pim":8,"plusMinus":2,"fow":0,"fol":0}},"BIES_COL":{"type":"skater","data":{"gp":84,"g":18,"a":33,"pts":51,"pim":108,"plusMinus":2,"fow":0,"fol":0}},"MEULEBROECK_NOL":{"type":"skater","data":{"gp":56,"g":9,"a":24,"pts":33,"pim":20,"plusMinus":0,"fow":0,"fol":0}},"PESCH_JUD":{"type":"skater","data":{"gp":87,"g":6,"a":28,"pts":34,"pim":90,"plusMinus":0,"fow":0,"fol":0}},"CORBETT_NIC":{"type":"skater","data":{"gp":83,"g":8,"a":23,"pts":31,"pim":52,"plusMinus":0,"fow":0,"fol":0}},"SCHMIEDEBERG_COL":{"type":"skater","data":{"gp":49,"g":7,"a":7,"pts":14,"pim":6,"plusMinus":0,"fow":0,"fol":0}},"BIES_MAX":{"type":"skater","data":{"gp":19,"g":3,"a":5,"pts":8,"pim":12,"plusMinus":0,"fow":0,"fol":0}},"CHUPKA_JAK":{"type":"skater","data":{"gp":32,"g":3,"a":3,"pts":6,"pim":12,"plusMinus":0,"fow":0,"fol":0}},"CLAUSON_RYA":{"type":"skater","data":{"gp":29,"g":1,"a":3,"pts":4,"pim":4,"plusMinus":0,"fow":0,"fol":0}},"OVERGAARD_BRA":{"type":"skater","data":{"gp":58,"g":3,"a":6,"pts":9,"pim":23,"plusMinus":0,"fow":0,"fol":0}},"CORDTS_WYA":{"type":"skater","data":{"gp":27,"g":0,"a":3,"pts":3,"pim":10,"plusMinus":0,"fow":0,"fol":0}},"NOWACKI_JOR":{"type":"skater","data":{"gp":38,"g":1,"a":2,"pts":3,"pim":15,"plusMinus":0,"fow":0,"fol":0}},"FRIZE_NOA":{"type":"skater","data":{"gp":41,"g":0,"a":2,"pts":2,"pim":2,"plusMinus":0,"fow":0,"fol":0}},"SCHMALTZ_BOD":{"type":"skater","data":{"gp":25,"g":1,"a":0,"pts":1,"pim":2,"plusMinus":0,"fow":0,"fol":0}},"BRATRUD_WES":{"type":"skater","data":{"gp":18,"g":0,"a":0,"pts":0,"pim":0,"plusMinus":0,"fow":0,"fol":0}},"LIND_SHA":{"type":"skater","data":{"gp":9,"g":0,"a":0,"pts":0,"pim":0,"plusMinus":0,"fow":0,"fol":0}},"JOHNSON_BRO":{"type":"skater","data":{"gp":1,"g":0,"a":0,"pts":0,"pim":0,"plusMinus":0,"fow":0,"fol":0}},"BOESPFLUG_CHA":{"type":"goalie","data":{"gp":4,"min":"0:00","w":0,"l":0,"t":0,"so":0,"ga":0,"sv":0}},"ROGNERUD_CAM":{"type":"goalie","data":{"gp":1,"min":"22:58","w":0,"l":0,"t":0,"so":0,"ga":4,"sv":4}},"ROCKSTAD_RYA":{"type":"goalie","data":{"gp":26,"min":"1224:05","w":13,"l":10,"t":1,"so":3,"ga":68,"sv":427}},"SCHINDELE_NOA":{"type":"goalie","data":{"gp":28,"min":"1426:10","w":15,"l":10,"t":2,"so":4,"ga":73,"sv":591}},"SCHULTZ_BRO":{"type":"skater","data":{"gp":55,"g":44,"a":52,"pts":96,"pim":59,"plusMinus":2,"fow":0,"fol":0}},"JAMIESON_LAN":{"type":"skater","data":{"gp":56,"g":31,"a":52,"pts":83,"pim":14,"plusMinus":2,"fow":0,"fol":0}},"MAGNER_GRA":{"type":"skater","data":{"gp":56,"g":28,"a":29,"pts":57,"pim":32,"plusMinus":2,"fow":0,"fol":0}},"FORE_JAC":{"type":"skater","data":{"gp":54,"g":14,"a":21,"pts":35,"pim":4,"plusMinus":0,"fow":0,"fol":0}},"SCHMALTZ_CUL":{"type":"skater","data":{"gp":56,"g":4,"a":11,"pts":15,"pim":20,"plusMinus":0,"fow":0,"fol":0}},"BURGER_GRA":{"type":"skater","data":{"gp":20,"g":2,"a":2,"pts":4,"pim":8,"plusMinus":0,"fow":0,"fol":0}},"MOE_CHA":{"type":"skater","data":{"gp":92,"g":15,"a":7,"pts":22,"pim":25,"plusMinus":0,"fow":0,"fol":0}},"BOESPFLUG_KAD":{"type":"skater","data":{"gp":8,"g":0,"a":0,"pts":0,"pim":0,"plusMinus":0,"fow":0,"fol":0}},"NOLTE_PAR":{"type":"skater","data":{"gp":2,"g":0,"a":0,"pts":0,"pim":0,"plusMinus":0,"fow":0,"fol":0}},"MCMAHON_THO":{"type":"goalie","data":{"gp":12,"min":"214:10","w":3,"l":1,"t":0,"so":2,"ga":7,"sv":41}},"WAVRA_LUC":{"type":"goalie","data":{"gp":20,"min":"395:30","w":4,"l":3,"t":0,"so":0,"ga":21,"sv":122}},"SCHMIEDEBERG_CAL":{"type":"skater","data":{"gp":26,"g":8,"a":9,"pts":17,"pim":14,"plusMinus":0,"fow":0,"fol":0}},"FROST_SAM":{"type":"skater","data":{"gp":27,"g":2,"a":9,"pts":11,"pim":16,"plusMinus":0,"fow":0,"fol":0}},"SEYDEL_GAG":{"type":"skater","data":{"gp":26,"g":4,"a":2,"pts":6,"pim":4,"plusMinus":0,"fow":0,"fol":0}},"SCHUMACHER_SAM":{"type":"skater","data":{"gp":25,"g":1,"a":4,"pts":5,"pim":2,"plusMinus":0,"fow":0,"fol":0}},"KOFSTAD_CAM":{"type":"skater","data":{"gp":24,"g":1,"a":1,"pts":2,"pim":6,"plusMinus":0,"fow":0,"fol":0}},"WOIDTKE_LAN":{"type":"skater","data":{"gp":3,"g":0,"a":0,"pts":0,"pim":0,"plusMinus":0,"fow":0,"fol":0}},"PAVLISH_BRA":{"type":"skater","data":{"gp":7,"g":0,"a":0,"pts":0,"pim":0,"plusMinus":0,"fow":0,"fol":0}},"HOLM_CHR":{"type":"skater","data":{"gp":3,"g":0,"a":0,"pts":0,"pim":0,"plusMinus":0,"fow":0,"fol":0}},"MERO_CHA":{"type":"goalie","data":{"gp":25,"min":"1242:38","w":15,"l":10,"t":0,"so":4,"ga":59,"sv":483}}},
+          careerSeasonData: { season1: '', season2: '', season3: '' }
         };
-        */
         // ============================================================
 
         const HockeyLinesChart = () => {
-          // Initialize myTeamSetup from EMBEDDED_CONFIG if in subscriber mode
+          // In subscriber mode, use embedded config; otherwise use defaults
           const getInitialTeamSetup = () => {
-            if (SUBSCRIBER_MODE && EMBEDDED_CONFIG?.teamSetup) {
-              console.log('🏒 SUBSCRIBER MODE: Loading embedded team config');
-              return EMBEDDED_CONFIG.teamSetup;
+            if (SUBSCRIBER_MODE && EMBEDDED_CONFIG && EMBEDDED_CONFIG.teamSetup) {
+              return {
+                teamName: EMBEDDED_CONFIG.teamSetup.teamName || 'My Team',
+                logo: EMBEDDED_CONFIG.teamSetup.logo || null,
+                colors: EMBEDDED_CONFIG.teamSetup.colors || { primary: '#fb923c', secondary: '#1f2937' },
+                arena: EMBEDDED_CONFIG.teamSetup.arena || '',
+                pronunciations: EMBEDDED_CONFIG.teamSetup.pronunciations || {}
+              };
             }
-            // Default for master site (Delano)
             return {
               teamName: 'Delano Tigers',
               logo: null,
               colors: { primary: '#fb923c', secondary: '#1f2937' },
               arena: 'Delano Area Sports Arena, Delano',
-              careerStats: {},
-              pronunciations: {},
-              careerSeasonData: {
-                season1: '',
-                season2: '',
-                season3: ''
-              }
+              pronunciations: {}
             };
           };
           
-          const [myTeamSetup, setMyTeamSetup] = useState(getInitialTeamSetup);
+          const [myTeamSetup, setMyTeamSetup] = useState(getInitialTeamSetup());
+
+          // Career stats import state - in subscriber mode, get from embedded config
+          const getInitialCareerImport = () => {
+            if (SUBSCRIBER_MODE && EMBEDDED_CONFIG && EMBEDDED_CONFIG.careerSeasonData) {
+              return EMBEDDED_CONFIG.careerSeasonData;
+            }
+            return { season1: '', season2: '', season3: '' };
+          };
+          const [careerStatsImport, setCareerStatsImport] = useState(getInitialCareerImport());
 
           const [myTeamData, setMyTeamData] = useState({
             teamName: '',
@@ -218,20 +228,6 @@
           const [selectedPlayer, setSelectedPlayer] = useState(null);
           const [opponentLogo, setOpponentLogo] = useState(null);
           const [opponentColors, setOpponentColors] = useState({ primary: '#dc2626', secondary: '#991b1b' });
-          const [careerStatsImport, setCareerStatsImport] = useState(() => {
-            if (SUBSCRIBER_MODE && EMBEDDED_CONFIG?.careerSeasonData) {
-              return {
-                lastSeason: EMBEDDED_CONFIG.careerSeasonData.season1 || '',
-                twoSeasonsAgo: EMBEDDED_CONFIG.careerSeasonData.season2 || '',
-                threeSeasonsAgo: EMBEDDED_CONFIG.careerSeasonData.season3 || ''
-              };
-            }
-            return {
-              lastSeason: '',
-              twoSeasonsAgo: '',
-              threeSeasonsAgo: ''
-            };
-          });
 
           const colorOptions = ['GREEN', 'RED', 'BLUE', 'YELLOW', 'WHITE', 'BLACK', 'DARK GRAY', 'LIGHT GRAY'];
           const colorClasses = {
@@ -325,39 +321,39 @@
             }
           };
 
-          // Load saved setup on mount
+          // Load saved setup on mount - skip in subscriber mode since we use embedded config
           useEffect(() => {
-            // In subscriber mode, initialize from embedded config
-            if (SUBSCRIBER_MODE && EMBEDDED_CONFIG) {
-              console.log('🏒 SUBSCRIBER MODE: Initializing from embedded config');
-              
-              // Initialize career stats in localStorage from embedded config
-              if (EMBEDDED_CONFIG.careerStats && Object.keys(EMBEDDED_CONFIG.careerStats).length > 0) {
+            // In subscriber mode, load career stats from embedded config into localStorage
+            if (SUBSCRIBER_MODE && EMBEDDED_CONFIG && EMBEDDED_CONFIG.careerStats) {
+              try {
                 localStorage.setItem('hockey-scout-career-stats', JSON.stringify(EMBEDDED_CONFIG.careerStats));
-                console.log('📦 Loaded', Object.keys(EMBEDDED_CONFIG.careerStats).length, 'embedded career stat records');
+                console.log('Loaded embedded career stats into localStorage');
+              } catch (error) {
+                console.error('Error loading embedded career stats:', error);
               }
-              
-              // Don't override myTeamSetup from localStorage in subscriber mode
-              return;
             }
             
-            // Master site: load from localStorage
-            try {
-              const saved = localStorage.getItem('myTeamSetup');
-              if (saved) {
-                setMyTeamSetup(JSON.parse(saved));
+            // In non-subscriber mode, load setup from localStorage
+            if (!SUBSCRIBER_MODE) {
+              try {
+                const saved = localStorage.getItem('myTeamSetup');
+                if (saved) {
+                  setMyTeamSetup(JSON.parse(saved));
+                }
+              } catch (error) {
+                console.error('Error loading saved setup:', error);
               }
-            } catch (error) {
-              console.error('Error loading saved setup:', error);
             }
           }, []);
 
-          // Save setup to localStorage whenever it changes
+          // Save setup to localStorage whenever it changes (only in non-subscriber mode)
           useEffect(() => {
-            try {
-              localStorage.setItem('myTeamSetup', JSON.stringify(myTeamSetup));
-            } catch (error) {
-              console.error('Error saving setup:', error);
+            if (!SUBSCRIBER_MODE) {
+              try {
+                localStorage.setItem('myTeamSetup', JSON.stringify(myTeamSetup));
+              } catch (error) {
+                console.error('Error saving setup:', error);
+              }
             }
           }, [myTeamSetup]);
 
@@ -392,36 +388,13 @@
 
           // Export Team Configuration for subscriber builds
           const handleExportConfig = () => {
-            // Get career stats from localStorage
-            let storedCareerStats = {};
-            try {
-              const stored = localStorage.getItem('hockey-scout-career-stats');
-              if (stored) {
-                storedCareerStats = JSON.parse(stored);
-                console.log('📦 Export: Including', Object.keys(storedCareerStats).length, 'career stat records');
-              }
-            } catch (e) {
-              console.error('Error reading career stats:', e);
-            }
-            
             const exportObj = {
               _exportInfo: {
                 exportDate: new Date().toISOString(),
                 version: '10.5',
-                teamName: myTeamSetup.teamName,
-                description: 'Full team configuration for subscriber site build'
+                teamName: myTeamSetup.teamName
               },
-              myTeamSetup: {
-                ...myTeamSetup,
-                // Include career stats from localStorage
-                careerStats: storedCareerStats
-              },
-              // Include raw career season paste data
-              careerSeasonData: {
-                season1: careerStatsImport.lastSeason || '',
-                season2: careerStatsImport.twoSeasonsAgo || '',
-                season3: careerStatsImport.threeSeasonsAgo || ''
-              }
+              myTeamSetup: myTeamSetup
             };
             
             const jsonString = JSON.stringify(exportObj, null, 2);
@@ -653,14 +626,6 @@
               if (nicknameIdx >= 0) {
                 nickname = lines[nicknameIdx].split(':')[1]?.trim() || '';
                 console.log('✅ Found nickname:', nickname);
-              }
-              
-              // Find Home Arena (for My Team Setup)
-              let homeArena = '';
-              const homeArenaIdx = lines.findIndex(l => l.startsWith('Home Arena:'));
-              if (homeArenaIdx >= 0) {
-                homeArena = lines[homeArenaIdx].split('Home Arena:')[1]?.trim() || '';
-                console.log('✅ Found Home Arena:', homeArena);
               }
               
               // Find team record
@@ -1016,6 +981,14 @@
                     gameNum: (record.w + record.l + record.t + 1).toString()
                   };
                 }
+              }
+              
+              // Parse Home Arena
+              let homeArena = '';
+              const arenaIdx = lines.findIndex(l => l.startsWith('Home Arena:'));
+              if (arenaIdx >= 0) {
+                homeArena = lines[arenaIdx].split('Home Arena:')[1]?.trim() || '';
+                console.log('✅ Found home arena:', homeArena);
               }
               
               console.log('📋 ========== PARSE COMPLETE ==========');
@@ -1628,8 +1601,8 @@
               if (importStep === 'myTeamHome') {
                 const parsed = parseHomePage(text);
                 setMyTeamData(prev => ({ ...prev, ...parsed }));
-                // If homeArena was found and myTeamSetup.arena is empty, update it
-                if (parsed.homeArena && !myTeamSetup.arena) {
+                // Also update arena in myTeamSetup if found
+                if (parsed.homeArena) {
                   setMyTeamSetup(prev => ({ ...prev, arena: parsed.homeArena }));
                 }
               } else if (importStep === 'myTeamRoster') {
@@ -1685,6 +1658,10 @@
                 if (importStep === 'myTeamHome') {
                   const parsed = parseHomePage(importText);
                   setMyTeamData(prev => ({ ...prev, ...parsed }));
+                  // Also update arena in myTeamSetup if found
+                  if (parsed.homeArena) {
+                    setMyTeamSetup(prev => ({ ...prev, arena: parsed.homeArena }));
+                  }
                 } else if (importStep === 'myTeamRoster') {
                   let roster = parseRoster(importText, myTeamData.roster);
                   roster = loadCareerStatsFromStorage(roster);
@@ -1742,6 +1719,10 @@
                 if (importStep === 'myTeamHome') {
                   const parsed = parseHomePage(importText);
                   setMyTeamData(prev => ({ ...prev, ...parsed }));
+                  // Also update arena in myTeamSetup if found
+                  if (parsed.homeArena) {
+                    setMyTeamSetup(prev => ({ ...prev, arena: parsed.homeArena }));
+                  }
                 } else if (importStep === 'myTeamRoster') {
                   let roster = parseRoster(importText, myTeamData.roster);
                   roster = loadCareerStatsFromStorage(roster);
@@ -2530,15 +2511,13 @@
                     
                     <div className="p-6">
                       <div className="bg-purple-50 p-4 rounded mb-4">
-                        <h3 className="font-bold mb-2">📦 Subscriber Build Export v10.5</h3>
+                        <h3 className="font-bold mb-2">Subscriber Build Export</h3>
                         <p className="text-sm text-gray-600 mb-2">
                           Copy this JSON configuration and send it to Claude to build a customized subscriber version. 
-                        </p>
-                        <p className="text-sm text-gray-600 mb-2">
-                          <strong>🔒 Baked into subscriber site (buttons hidden):</strong> Team name, logo, colors, arena, career stats from all 3 seasons.
+                          This includes all your team setup data (team name, colors, logo, career stats, pronunciations).
                         </p>
                         <p className="text-sm text-gray-600">
-                          <strong>✏️ Editable by subscriber coach:</strong> Pronunciations (saved to their local storage).
+                          <strong>What's included:</strong> Team name, mascot, arena, logo, colors, career stats, pronunciations, and season data.
                         </p>
                       </div>
                       
